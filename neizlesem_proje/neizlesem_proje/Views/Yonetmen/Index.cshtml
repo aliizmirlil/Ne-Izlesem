@@ -1,0 +1,30 @@
+﻿@model IEnumerable<neizlesem_proje.Models.Yonetmen>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+<table class="uyelerigor" border="1">
+    <tr>
+        <th>
+            <b> Yönetmen ad soyad </b>
+        </th>
+        <th>
+            <b>İşlemler</b>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td align="center">
+            @Html.DisplayFor(modelItem => item.yonetmen_adsoyad)
+        </td>
+        <td align="center">
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.yonetmen_no }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.yonetmen_no })
+        </td>
+    </tr>
+}
+
+</table>

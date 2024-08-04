@@ -1,0 +1,48 @@
+﻿@model IEnumerable<neizlesem_proje.Models.Film>
+
+@{
+    ViewBag.Title = "film_goster";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+<table>
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td align="center">
+                <div class="filmgoster">
+                    <div class="filmgoster2">
+                        <img src="~/film_afisleri/@item.film_afis" />
+                    </div>
+                    <label class="fgosterbaslik"> @item.film_adi (@item.film_cikis_tarih.Year)</label>
+                    <br>
+                    <label class="tur"> IMDB @item.puan</label>
+                    <br>
+                    <div class="ozet">
+                        @item.film_ozeti
+
+                    </div>
+                    <table class="fbilgileri">
+                        <tr>
+                            <td> <label class="alanlar"> Yönetmen: </label></td>
+                            <td><label class="alanbilgileri">@item.yonetmeni.yonetmen_adsoyad </label> </td>
+                        </tr>
+                        <tr>
+                            <td> <label class="alanlar"> Yıldızlar: </label></td>
+                            <td><label class="alanbilgileri">@item.yildizlar</label> </td>
+                        </tr>
+                        <tr>
+                            <td> <label class="alanlar">Yapım: </label></td>
+                            <td><label class="alanbilgileri"> @item.film_cikis_tarih.ToShortDateString() </label> </td>
+                        </tr>
+                        <tr>
+                            <td> <label class="alanlar"> Tür: </label></td>
+                            <td><label class="alanbilgileri"> @item.tur.tur_adi </label> </td>
+                     </tr>
+                    </table>
+                </div>
+            </td>
+        }
+    </tr>
+</table>
+

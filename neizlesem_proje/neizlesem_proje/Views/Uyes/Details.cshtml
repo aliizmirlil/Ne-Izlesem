@@ -1,0 +1,51 @@
+﻿@model neizlesem_proje.Models.Uye
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Uye</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ad_soyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ad_soyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uye_mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uye_mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kul_adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kul_adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sifre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.uye_no }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

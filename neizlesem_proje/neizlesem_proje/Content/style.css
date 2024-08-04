@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/*base css start*/
+* {
+    margin: 0;
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+/*base css end*/
+body {
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+}
+
+/* navbar css start*/
+.navbar {
+    background-color: #1B1B1B;
+    height: 60px;
+    color: white;
+    position:sticky;
+    top:0;
+}
+.navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 50px;
+}
+.logo{
+    color:rgb(255,136,9);
+    font-size:30px;
+    font-family:Monument;
+}
+img{
+    max-height:200px;
+    max-width:100%;
+}
+.menu-list{
+    display:flex;
+    text-decoration:none;
+    list-style:none;
+    column-gap:30px;
+}
+.menu-list-item{
+    cursor: pointer;
+    color:white;
+}
+
+.menu-list-item ul{
+    text-decoration:none;
+    list-style:none;
+    
+}
+.menu-list-item li a {
+    display:block;
+    font-size:10px;
+    color:white;
+    padding:0 15px;
+    line-height:50px;
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+  .menu-list-item.active {
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+  .profil-container{
+      display:flex;
+      align-items:center;
+      column-gap:20px;
+  }
+  .profil-text-container{
+      display:flex;
+      align-items:center;
+      column-gap:5px;
+      line-height:1;
+  }
+
+/*  .toggle{
+      width:40px;
+      background-color:white;
+      height:20px;
+      position:relative;
+      border-radius:30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-around;
+  }
+
+  .toggle-icon{
+      color:goldenrod;
+  }
+
+  .toggle-ball{
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      cursor:pointer;
+      background-color:black;
+      position:absolute;
+      right:1px;
+  } */
+    
+.menu-list-item:hover {
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+/*navbar css end*/
+
+/* ana content*/
+.content{
+    align-content:center;
+    align-items:center;
+    text-align:center;
+}
+.content-wrapper{
+    background: url('../film_afisleri/doodles.jpg');
+    height:100vh;
+    color:white;
+}
+
+footer{
+    background-color:black;
+    color:white;
+    text-align:center;
+    font-size:12px;
+    height:30px;
+}

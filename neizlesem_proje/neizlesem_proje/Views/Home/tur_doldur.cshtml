@@ -1,0 +1,11 @@
+﻿@model IEnumerable<neizlesem_proje.Models.Tur>
+
+<ul>
+    <li style="display:block"><a href="@Url.Action("Index","Film")">Tümü</a></li>
+    @foreach(var gelen_tur in Model)
+            {
+                <li style="display:block;">
+                    <a href="@Url.Action("Index","Film",new {id=gelen_tur.tur_no})">@gelen_tur.tur_adi</a>
+                </li>
+            }
+</ul>

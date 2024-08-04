@@ -1,0 +1,57 @@
+﻿@model neizlesem_proje.Models.Uye
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+@ViewBag.kayit_durum
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<form id="form-signup" runat="server">
+    <div class="container">
+        <div class="container2">
+            <br>
+            <br>
+            <label class="welcome">KAYIT OL</label>
+            <br />
+            <hr style="width:50%; margin:auto; margin-top:10px;" />
+            <br />
+            <br />
+            <div class="form-group">
+                <label class="name"><b>Ad soyad</b></label>
+                <input type="text" placeholder="Ad soyad giriniz" name="ad_soyad" required>
+                @Html.ValidationMessageFor(model => model.ad_soyad, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label class="name"><b>E-mail</b></label>
+                <input type="text" placeholder="E-mail giriniz" name="uye_mail" required>
+                @Html.ValidationMessageFor(model => model.uye_mail, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label class="uname"><b>Kullanıcı adı</b></label>
+                <input type="text" placeholder="Kullanıcı adı giriniz" name="kul_adi" required>
+                @Html.ValidationMessageFor(model => model.kul_adi, "", new { @class = "text-danger" })
+                @if (ViewBag.kuladi_onerilerim != null)
+                {
+                    <label class="uyari"> <b>Kullanılabilir kullanıcı adları: </b></label>
+                    foreach (var oneri in ViewBag.kuladi_onerilerim)
+                    {
+                        <label class="uyari">@oneri</label>
+
+                    }
+                }
+            </div>
+            <div class="form-group">
+                <label class="sifre"><b>Şifre</b></label>
+                <input type="password" placeholder="Şifre giriniz" name="sifre" required>
+                @Html.ValidationMessageFor(model => model.sifre, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" class="bttn" value="Kayıt ol">
+            </div>
+            <label class="uyari"><i>@ViewBag.kayit_durum</i></label>
+        </div>
+    </div>
+</form>
+}

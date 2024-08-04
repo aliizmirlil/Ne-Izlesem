@@ -1,0 +1,83 @@
+﻿@model neizlesem_proje.Models.Film
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container" style="height:800px;">
+        <div class="container2" style="height:810px;">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.film_no)
+            <br>
+            <br>
+            <label class="welcome">FİLM KAYIT</label>
+            <br />
+            <hr style="width:50%; margin:auto; margin-top:10px;" />
+            <br />
+            <br />
+            <div class="form-group">
+                <label class="name"><b>Film adı: </b></label>
+                @Html.EditorFor(model => model.film_adi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.film_adi, "", new { @class = "text-danger" })
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label class="name"><b>Özeti: </b></label>
+                @Html.EditorFor(model => model.film_ozeti, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.film_ozeti, "", new { @class = "text-danger" })
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label class="name"><b>Tür: </b></label>
+                @Html.DropDownList("tur_no", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.tur_no, "", new { @class = "text-danger" })
+            </div>
+            <br />
+
+            <div class="form-group">
+                @Html.EditorFor(model => model.film_afis, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.film_afis, "", new { @class = "text-danger" })
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label class="name"><b>Film çıkış tarihi: </b></label>
+                @Html.EditorFor(model => model.film_cikis_tarih, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.film_cikis_tarih, "", new { @class = "text-danger" })
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label class="name"><b>Puan: </b></label>
+                @Html.EditorFor(model => model.puan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.puan, "", new { @class = "text-danger" })
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label class="name"><b>Yönetmen: </b></label>
+                @Html.DropDownList("yonetmen_no", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.yonetmen_no, "", new { @class = "text-danger" })
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label class="name"><b>Yıldızlar: </b></label>
+                @Html.EditorFor(model => model.yildizlar, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" class="bttn" value="Güncelle">
+            </div>
+            <label class="uyari">@ViewBag.msg</label>
+
+        </div>
+        </div>
+        }

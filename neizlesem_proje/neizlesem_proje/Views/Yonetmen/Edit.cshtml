@@ -1,0 +1,39 @@
+﻿@model neizlesem_proje.Models.Yonetmen
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="container">
+            <div class="container2">
+                <br />
+                <br />
+                <label class="welcomeupdate">BİLGİLERİ GÜNCELLE</label>
+                <br />
+                <hr style="width:50%; margin:auto; margin-top:10px;" />
+                <br />
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.yonetmen_no)
+                <div class="form-group">
+                    <label class="name"><b>Yönetmen ad soyad: </b></label>
+                    @Html.EditorFor(model => model.yonetmen_adsoyad)
+                    @Html.ValidationMessageFor(model => model.yonetmen_adsoyad, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Güncelle" class="bttn" />
+                </div>
+                <br />
+                <label class="uyari"><i>@ViewBag.durumu</i></label>
+            </div>
+            </div>
+        </div>
+                }
+

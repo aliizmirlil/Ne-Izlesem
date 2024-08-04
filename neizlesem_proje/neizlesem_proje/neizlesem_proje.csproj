@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A48C4E11-FC6C-4771-AF3E-25D5F2EF833F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>neizlesem_proje</RootNamespace>
+    <AssemblyName>neizlesem_proje</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44325</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hasseware.Net.TMDb, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4d204bf90cffca75, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hasseware.TheMovieDB.1.3.0.0\lib\net45\Hasseware.Net.TMDb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FavoriController.cs" />
+    <Compile Include="Controllers\FilmController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UyesController.cs" />
+    <Compile Include="Controllers\YonetmenController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303151228572_guncel123.cs" />
+    <Compile Include="Migrations\202303151228572_guncel123.Designer.cs">
+      <DependentUpon>202303151228572_guncel123.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303151610532_guncel234.cs" />
+    <Compile Include="Migrations\202303151610532_guncel234.Designer.cs">
+      <DependentUpon>202303151610532_guncel234.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303160855275_guncel345.cs" />
+    <Compile Include="Migrations\202303160855275_guncel345.Designer.cs">
+      <DependentUpon>202303160855275_guncel345.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303242110299_gunceldb.cs" />
+    <Compile Include="Migrations\202303242110299_gunceldb.Designer.cs">
+      <DependentUpon>202303242110299_gunceldb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303242151403_guncel3456.cs" />
+    <Compile Include="Migrations\202303242151403_guncel3456.Designer.cs">
+      <DependentUpon>202303242151403_guncel3456.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301331548_30.03guncel.cs" />
+    <Compile Include="Migrations\202303301331548_30.03guncel.Designer.cs">
+      <DependentUpon>202303301331548_30.03guncel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301336582_30.03guncel1.cs" />
+    <Compile Include="Migrations\202303301336582_30.03guncel1.Designer.cs">
+      <DependentUpon>202303301336582_30.03guncel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301338450_30.03guncel12.cs" />
+    <Compile Include="Migrations\202303301338450_30.03guncel12.Designer.cs">
+      <DependentUpon>202303301338450_30.03guncel12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303301410558_30.03.2023guncel.cs" />
+    <Compile Include="Migrations\202303301410558_30.03.2023guncel.Designer.cs">
+      <DependentUpon>202303301410558_30.03.2023guncel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303302027173_31.03guncel.cs" />
+    <Compile Include="Migrations\202303302027173_31.03guncel.Designer.cs">
+      <DependentUpon>202303302027173_31.03guncel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303302048534_sonhal1.cs" />
+    <Compile Include="Migrations\202303302048534_sonhal1.Designer.cs">
+      <DependentUpon>202303302048534_sonhal1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303302053384_ukfixed.cs" />
+    <Compile Include="Migrations\202303302053384_ukfixed.Designer.cs">
+      <DependentUpon>202303302053384_ukfixed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304170758244_17.04guncel.cs" />
+    <Compile Include="Migrations\202304170758244_17.04guncel.Designer.cs">
+      <DependentUpon>202304170758244_17.04guncel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304171109432_17.04v3.cs" />
+    <Compile Include="Migrations\202304171109432_17.04v3.Designer.cs">
+      <DependentUpon>202304171109432_17.04v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304171126289_17.04v4.cs" />
+    <Compile Include="Migrations\202304171126289_17.04v4.Designer.cs">
+      <DependentUpon>202304171126289_17.04v4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304271600215_2704v2.cs" />
+    <Compile Include="Migrations\202304271600215_2704v2.Designer.cs">
+      <DependentUpon>202304271600215_2704v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305111022508_11.05.cs" />
+    <Compile Include="Migrations\202305111022508_11.05.Designer.cs">
+      <DependentUpon>202305111022508_11.05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305111116128_11.05v6.cs" />
+    <Compile Include="Migrations\202305111116128_11.05v6.Designer.cs">
+      <DependentUpon>202305111116128_11.05v6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305111118243_11.05v7.cs" />
+    <Compile Include="Migrations\202305111118243_11.05v7.Designer.cs">
+      <DependentUpon>202305111118243_11.05v7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305121732512_12.05.cs" />
+    <Compile Include="Migrations\202305121732512_12.05.Designer.cs">
+      <DependentUpon>202305121732512_12.05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306051001378_updatefinal.cs" />
+    <Compile Include="Migrations\202306051001378_updatefinal.Designer.cs">
+      <DependentUpon>202306051001378_updatefinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306051004401_updatefinal2.cs" />
+    <Compile Include="Migrations\202306051004401_updatefinal2.Designer.cs">
+      <DependentUpon>202306051004401_updatefinal2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Favori.cs" />
+    <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\Filmcast.cs" />
+    <Compile Include="Models\Izlenecek.cs" />
+    <Compile Include="Models\neizlesem.cs" />
+    <Compile Include="Models\Oyuncu.cs" />
+    <Compile Include="Models\Puan_dogrulama.cs" />
+    <Compile Include="Models\Tur.cs" />
+    <Compile Include="Models\Uye.cs" />
+    <Compile Include="Models\Yonetmen.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\datepicker.css" />
+    <Content Include="Content\giris.css" />
+    <Content Include="Content\kayitgiris.css" />
+    <Content Include="Content\layoutum.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Sablonstil.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="film_afisleri\barbieafis.jpg" />
+    <Content Include="film_afisleri\coco.jpg" />
+    <Content Include="film_afisleri\codaafis.jpg" />
+    <Content Include="film_afisleri\diagram.png" />
+    <Content Include="film_afisleri\doodles.jpg" />
+    <Content Include="film_afisleri\dune2afis.jpg" />
+    <Content Include="film_afisleri\eeaao.jpg" />
+    <Content Include="film_afisleri\elementalafis.jpg" />
+    <Content Include="film_afisleri\enforcer.jpg" />
+    <Content Include="film_afisleri\enkantoafis.jpg" />
+    <Content Include="film_afisleri\esaretinbedeli.jpg" />
+    <Content Include="film_afisleri\fightclub.jpg" />
+    <Content Include="film_afisleri\flashafis.jpg" />
+    <Content Include="film_afisleri\fnafafis.jpg" />
+    <Content Include="film_afisleri\inception.jpg" />
+    <Content Include="film_afisleri\klaus.jpg" />
+    <Content Include="film_afisleri\kuzularinsessizligi.jpg" />
+    <Content Include="film_afisleri\lalaland.jpg" />
+    <Content Include="film_afisleri\logodeneme6.png" />
+    <Content Include="film_afisleri\logov2.png" />
+    <Content Include="film_afisleri\matrix.jpg" />
+    <Content Include="film_afisleri\meg2afis.jpg" />
+    <Content Include="film_afisleri\neizlesemv2.png" />
+    <Content Include="film_afisleri\neizlesem_logo.png" />
+    <Content Include="film_afisleri\nomadlandafis.jpg" />
+    <Content Include="film_afisleri\northman.jpg" />
+    <Content Include="film_afisleri\oppenheimerafis.jpg" />
+    <Content Include="film_afisleri\parazit.jpg" />
+    <Content Include="film_afisleri\pinokyoafis.jpg" />
+    <Content Include="film_afisleri\prestige.jpg" />
+    <Content Include="film_afisleri\prey.jpg" />
+    <Content Include="film_afisleri\questmark.png" />
+    <Content Include="film_afisleri\scarface.jpg" />
+    <Content Include="film_afisleri\soul.jpg" />
+    <Content Include="film_afisleri\spiderverse.jpg" />
+    <Content Include="film_afisleri\stokfoto.png" />
+    <Content Include="film_afisleri\suyunsesi.jpg" />
+    <Content Include="film_afisleri\thewhale.jpg" />
+    <Content Include="film_afisleri\toystory.jpg" />
+    <Content Include="film_afisleri\toystory2.jpg" />
+    <Content Include="film_afisleri\toystory3.jpg" />
+    <Content Include="film_afisleri\toystory4.jpg" />
+    <Content Include="film_afisleri\transformersafis.jpg" />
+    <Content Include="film_afisleri\violentnight.jpg" />
+    <Content Include="film_afisleri\yesilrehber.jpg" />
+    <Content Include="film_afisleri\yukaribak.jpg" />
+    <Content Include="film_afisleri\yuruyensato.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.tr.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scripts.js" />
+    <Content Include="Views\index.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layoutv2.cshtml" />
+    <Content Include="Views\Home\tur_doldur.cshtml" />
+    <Content Include="Views\Uyes\Delete.cshtml" />
+    <Content Include="Views\Uyes\Details.cshtml" />
+    <Content Include="Views\Uyes\Edit.cshtml" />
+    <Content Include="Views\Uyes\Index.cshtml" />
+    <Content Include="Views\Uyes\Create.cshtml" />
+    <Content Include="Views\Home\uye_giris.cshtml" />
+    <Content Include="Views\Film\Index.cshtml" />
+    <Content Include="Views\Film\film_goster.cshtml" />
+    <Content Include="Views\Favori\favori_ekle.cshtml" />
+    <Content Include="Views\Favori\Index.cshtml" />
+    <Content Include="Views\Film\Delete.cshtml" />
+    <Content Include="Views\Film\Create.cshtml" />
+    <Content Include="Views\Yonetmen\Create.cshtml" />
+    <Content Include="Views\Yonetmen\Index.cshtml" />
+    <Content Include="Views\Favori\Delete.cshtml" />
+    <Content Include="Views\Film\Index2.cshtml" />
+    <Content Include="Views\Film\film_oner.cshtml" />
+    <Content Include="Views\Film\onerilen_filmler.cshtml" />
+    <Content Include="Views\Film\Edit.cshtml" />
+    <Content Include="Views\Home\sinema.cshtml" />
+    <Content Include="Views\Yonetmen\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202303151228572_guncel123.resx">
+      <DependentUpon>202303151228572_guncel123.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303151610532_guncel234.resx">
+      <DependentUpon>202303151610532_guncel234.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303160855275_guncel345.resx">
+      <DependentUpon>202303160855275_guncel345.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303242110299_gunceldb.resx">
+      <DependentUpon>202303242110299_gunceldb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303242151403_guncel3456.resx">
+      <DependentUpon>202303242151403_guncel3456.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301331548_30.03guncel.resx">
+      <DependentUpon>202303301331548_30.03guncel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301336582_30.03guncel1.resx">
+      <DependentUpon>202303301336582_30.03guncel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301338450_30.03guncel12.resx">
+      <DependentUpon>202303301338450_30.03guncel12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303301410558_30.03.2023guncel.resx">
+      <DependentUpon>202303301410558_30.03.2023guncel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303302027173_31.03guncel.resx">
+      <DependentUpon>202303302027173_31.03guncel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303302048534_sonhal1.resx">
+      <DependentUpon>202303302048534_sonhal1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303302053384_ukfixed.resx">
+      <DependentUpon>202303302053384_ukfixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304170758244_17.04guncel.resx">
+      <DependentUpon>202304170758244_17.04guncel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304171109432_17.04v3.resx">
+      <DependentUpon>202304171109432_17.04v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304171126289_17.04v4.resx">
+      <DependentUpon>202304171126289_17.04v4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304271600215_2704v2.resx">
+      <DependentUpon>202304271600215_2704v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305111022508_11.05.resx">
+      <DependentUpon>202305111022508_11.05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305111116128_11.05v6.resx">
+      <DependentUpon>202305111116128_11.05v6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305111118243_11.05v7.resx">
+      <DependentUpon>202305111118243_11.05v7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305121732512_12.05.resx">
+      <DependentUpon>202305121732512_12.05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306051001378_updatefinal.resx">
+      <DependentUpon>202306051001378_updatefinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306051004401_updatefinal2.resx">
+      <DependentUpon>202306051004401_updatefinal2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61699</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44325/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

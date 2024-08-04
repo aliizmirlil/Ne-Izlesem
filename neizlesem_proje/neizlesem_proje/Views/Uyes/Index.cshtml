@@ -1,0 +1,48 @@
+﻿@model IEnumerable<neizlesem_proje.Models.Uye>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+<br />
+<table class="uyelerigor" border="1">
+    <tr>
+        <th>
+            <b>Ad soyad</b>
+        </th>
+        <th>
+         <b> E-mail</b>
+        </th>
+        <th>
+            <b>Kullanıcı adı</b>
+        </th>
+        <th>
+            <b>Şifre</b>
+        </th>
+        <th align="center">
+           <b> İşlemler</b>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td align="center">
+            @item.ad_soyad
+        </td>
+        <td align="center">
+            @item.uye_mail
+        </td>
+        <td align="center">
+            @item.kul_adi
+        </td>
+        <td align="center">
+            @item.sifre
+        </td>
+        <td align="center">
+            <a href="@Url.Action("Edit", "Uyes", new { id=item.uye_no })">Güncelle</a> |
+            <a href="@Url.Action("Delete", "Uyes", new { id=item.uye_no })">Sil</a>
+        </td>
+    </tr>
+}
+
+</table>

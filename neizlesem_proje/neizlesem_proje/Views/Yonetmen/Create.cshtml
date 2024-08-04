@@ -1,0 +1,35 @@
+﻿@model neizlesem_proje.Models.Yonetmen
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="container2">
+            <br>
+            <br>
+            <label class="welcome" style="margin-left:180px;">YÖNETMEN KAYIT</label>
+            <br />
+            <hr style="width:50%; margin:auto; margin-top:10px;" />
+            <br />
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="name"><b>Yönetmen ad soyad: </b></label>
+                <input type="text" placeholder="örn. Christopher Nolan" name="yonetmen_adsoyad" required />
+                @Html.ValidationMessageFor(model => model.yonetmen_adsoyad, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" class="bttn" value="Kaydet">
+            </div>
+            <label class="uyari">@ViewBag.msj</label>
+        </div>
+    </div>
+}

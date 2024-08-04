@@ -1,0 +1,95 @@
+﻿@model IPagedList<neizlesem_proje.Models.Favori>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+<label class="uyari">@ViewBag.uyari</label>
+<table>
+    @{ byte sayac = 0;}
+    <tr>
+
+        @foreach (var item in Model)
+        {
+            if (sayac != 5)
+            {
+                <td align="center">
+                    <div class="filmcontent">
+                        <div class="filmcontent2">
+                            <a href="@Url.Action("film_goster","Film",new {id = item.film_no})">
+                                @Html.DisplayFor(modelItem => item.film.film_adi)
+                                <br />
+                                <img src="~/film_afisleri/@item.film.film_afis" />
+                                Vizyon tarihi:  @item.film.film_cikis_tarih.Year
+                                <br />
+                                Imdb:   @Html.DisplayFor(modelItem => item.film.puan)
+                            </a>
+                            <br />
+                            <a href="@Url.Action("Delete","Favori",new {id = item.favori_no})"> <i class="fa-solid fa-minus"></i></a>
+                        </div>
+                    </div>
+                </td>
+                sayac++;
+            }
+            if (sayac == 5) { break; }
+
+        }
+    </tr>
+    @{ sayac = 1;}
+    <tr>
+        @foreach (var item in Model)
+        {
+            if (sayac > 5)
+            {
+                <td align="center">
+                    <div class="filmcontent">
+                        <div class="filmcontent2">
+                            <a href="@Url.Action("film_goster","Film",new {id = item.film_no})">
+                                @Html.DisplayFor(modelItem => item.film.film_adi)
+                                <br />
+                                <img src="~/film_afisleri/@item.film.film_afis" />
+                                Vizyon tarihi:  @item.film.film_cikis_tarih.Year
+                                <br />
+                                Imdb:   @Html.DisplayFor(modelItem => item.film.puan)
+                            </a>
+                            <br />
+                            <a href="@Url.Action("Delete","Favori",new {id = item.favori_no})"> <i class="fa-solid fa-minus"></i> </a>
+                        </div>
+                    </div>
+                </td>
+            }
+            sayac++;
+            if (sayac == 11) { break; }
+        }
+    </tr>
+    @{ sayac = 2;}
+    <tr>
+        @foreach (var item in Model)
+        {
+            if (sayac > 11)
+            {
+                <td align="center">
+                    <div class="filmcontent">
+                        <div class="filmcontent2">
+                            <a href="@Url.Action("film_goster","Film",new {id = item.film_no})">
+                                @Html.DisplayFor(modelItem => item.film.film_adi)
+                                <br />
+                                <img src="~/film_afisleri/@item.film.film_afis" />
+                                Vizyon tarihi:  @item.film.film_cikis_tarih.Year
+                                <br />
+                                Imdb:   @Html.DisplayFor(modelItem => item.film.puan)
+                            </a>
+                            <br />
+                            <a href="@Url.Action("Delete","Favori",new {id = item.favori_no})"> <i class="fa-solid fa-minus"></i></a>
+                        </div>
+                    </div>
+                </td>
+            }
+            sayac++;
+            if (sayac == 17) { break; }
+        }
+    </tr>
+    <tr><td colspan="5" style="text-align:center">@Html.PagedListPager(Model, sayfa => Url.Action("Index", new { sayfa }), PagedListRenderOptions.ClassicPlusFirstAndLast)</td></tr>
+</table>
+

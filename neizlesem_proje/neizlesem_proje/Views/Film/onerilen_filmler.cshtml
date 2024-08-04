@@ -1,0 +1,109 @@
+﻿@model IPagedList<neizlesem_proje.Models.Film>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "onerilen_filmler";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+<label class="filmbaslik" style="color:white">Önerilen filmler</label>
+<hr width="300px" />
+<br />
+
+<label class="uyari">@ViewBag.uyari</label>
+<table>
+    @{ byte sayac = 0;}
+    <tr>
+        @if (Model != null)
+        {
+        foreach (var item in Model)
+        {
+            if (sayac != 5)
+            {
+                <td align="center">
+                    <div class="filmcontent">
+                        <div class="filmcontent2">
+                            <a href="@Url.Action("film_goster", "Film", new { id = item.film_no })">
+                                @Html.DisplayFor(modelItem => item.film_adi)
+                                <br />
+                                <img src="~/film_afisleri/@item.film_afis" />
+                                Vizyon tarihi:  @item.film_cikis_tarih.Year
+                                <br />
+                                Imdb:   @Html.DisplayFor(modelItem => item.puan)
+                            </a>
+                            <br />
+                            <a href="@Url.Action("favori_ekle", "Favori", new { id = item.film_no })"> <i class="fa-solid fa-heart"></i> </a>
+                        </div>
+                    </div>
+                </td>
+                sayac++;
+            }
+            if (sayac == 5) { break; }
+
+        }
+        }
+    </tr>
+    @{ sayac = 1;}
+    <tr>
+        @if (Model != null)
+            {
+        foreach (var item in Model)
+        {
+            if (sayac > 5)
+            {
+                <td align="center">
+                    <div class="filmcontent">
+                        <div class="filmcontent2">
+                            <a href="@Url.Action("film_goster","Film",new {id = item.film_no})">
+                                @Html.DisplayFor(modelItem => item.film_adi)
+                                <br />
+                                <img src="~/film_afisleri/@item.film_afis" />
+                                Vizyon tarihi:  @item.film_cikis_tarih.Year
+                                <br />
+                                Imdb:   @Html.DisplayFor(modelItem => item.puan)
+                            </a>
+                            <br />
+                            <a href="@Url.Action("favori_ekle","Favori",new {id = item.film_no})"> <i class="fa-solid fa-heart"></i> </a>
+                        </div>
+                    </div>
+                </td>
+                }
+                sayac++;
+                if (sayac == 11) { break; }
+            }
+        }
+    </tr>
+    @{ sayac = 2;}
+<tr>
+    @if (Model != null)
+            {
+    foreach (var item in Model)
+    {
+        if (sayac > 11)
+        {
+            <td align="center">
+                <div class="filmcontent">
+                    <div class="filmcontent2">
+                        <a href="@Url.Action("film_goster","Film",new {id = item.film_no})">
+                            @Html.DisplayFor(modelItem => item.film_adi)
+                            <br />
+                            <img src="~/film_afisleri/@item.film_afis" />
+                            Vizyon tarihi:  @item.film_cikis_tarih.Year
+                            <br />
+                            Imdb:   @Html.DisplayFor(modelItem => item.puan)
+                        </a>
+                        <br />
+                        <a href="@Url.Action("favori_ekle","Favori",new {id = item.film_no})"> <i class="fa-solid fa-heart"></i> </a>
+                    </div>
+                </div>
+            </td>
+            }
+            sayac++;
+            if (sayac == 17) { break; }
+        }
+    }
+</tr>
+    <tr><td colspan="5" style="text-align:center">@Html.PagedListPager(Model, sayfa => Url.Action("onerilen_filmler", new { sayfa }), PagedListRenderOptions.ClassicPlusFirstAndLast)</td></tr>
+</table>
+
+

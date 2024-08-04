@@ -1,0 +1,56 @@
+﻿@using neizlesem_proje.Models;
+@model neizlesem_proje.Models.Uye
+
+@{
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+    string adsoyad = "Ziyaretçi";
+    if (Session["uyem"] != null)
+    {
+        adsoyad = ((Uye)Session["uyem"]).ad_soyad;
+    }
+}
+
+
+@using (Html.BeginForm("uye_giris", "Home"))
+{
+<form id="form-login" runat="server">
+    <div class="container">
+        <div class="container2">
+            <br>
+            <br />
+            <label class="welcome"> GİRİŞ YAP </label>
+            <br />
+            <hr style="width:50%; margin:auto; margin-top:10px;" />
+            <br />
+            <br />
+            <div class="form-group">
+                <label class="uname"><b>Kullanıcı adı</b></label>
+                <input type="text" placeholder="Kullanıcı adı giriniz" name="kul_adi" required>
+                @Html.ValidationMessageFor(model => model.kul_adi, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label class="sifre"><b>Şifre</b></label>
+                @*  <input type="password" placeholder="Şifre giriniz" name="sifre" required>*@
+                <div class="input-icon">
+                    @Html.Password("sifre", "", new { @class = "form-control", placeholder = "Şifre giriniz", required = true })<i class="fa-solid fa-eye" onclick="togglePassword()"></i>
+                </div>
+                <script>
+                    function togglePassword() {
+                        var element = document.getElementById('sifre');
+                        element.type = (element.type == 'password' ? 'text' : 'password');
+                    }
+                </script>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="bttn" value="Giriş yap">
+            </div>
+            <br />
+            <label class="uyari"><i>@ViewBag.mesaj</i></label>
+        </div>
+    </div>
+
+</form>
+}
+
+
+

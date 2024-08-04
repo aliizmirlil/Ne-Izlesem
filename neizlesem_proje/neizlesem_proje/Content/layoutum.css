@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background-image: url('../film_afisleri/doodles.jpg');
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #262626;
+    /*  background: rgb(28,28,28);
+    background: linear-gradient(335deg, rgba(28,28,28,1) 0%, rgba(94,94,94,1) 47%, rgba(45,45,45,1) 100%); 
+       */
+    height: 70px;
+    width: 100%;
+    z-index:9999;
+}
+
+label.logo {
+    color: White;
+    font-size: 2.2em;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: 800;
+}
+
+    label.logo img {
+        width: auto;
+        margin: 5px;
+        height: 60px;
+        border-radius: 10px;
+    }
+
+label.hosgeldin {
+    color: white;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 12px;
+}
+
+label.rights{
+    color:white;
+    text-align:center;
+    bottom:0;
+    margin-left:800px;
+    font-size:12px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5px;
+    }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.0em;
+            padding: 7px 12px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            border-radius: 8px;
+        }
+
+#nav ul li a {
+    transition-timing-function:ease-in-out;
+}
+
+a.active, a:hover {
+    background: #EEEEEE;
+    color: black;
+    border-radius: 8px;
+}
+
+#kategoriler-content {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    margin-top: -23px;
+    margin-left: -7px;
+    background-color: #2C2C2C;
+    font-size: 10px;
+    width: 170px;
+    border-radius: 8px;
+    padding: 0;
+}
+
+.kategori-li:hover #kategoriler-content {
+    display: block;
+}
+
+.content {
+   /* background: rgb(37,37,37);
+    background: linear-gradient(335deg, rgba(37,37,37,1) 0%, rgba(45,45,45,1) 50%, rgba(71,71,71,1) 100%); */
+    width: 1000px;
+    height: auto;
+    
+    margin: 0 auto;
+    justify-content:center;
+    align-content:center;
+    z-index: 0;
+}
+
+.bttn {
+    background-color: #787878;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 8px;
+    margin-left: 220px;
+    margin-top: 15px;
+}
+
+    .bttn:hover {
+        opacity: 0.8;
+    }
+
+input{
+    cursor:auto;
+}
+
+.filmcontent {
+    width: 205px;
+    height: 420px;
+    text-align: center;
+    justify-content: center;
+    font-size: 16px;
+    color: White;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+    background: linear-gradient(335deg, rgba(37,37,37,1) 0%, rgba(45,45,45,1) 50%, rgba(71,71,71,1) 100%);
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    transition: all .3s;
+}
+.filmcontent2 {
+    width: 205px;
+    height: 420px;
+    background-color: #1a1a1a;
+    transition: all .2s;
+}
+    .filmcontent2:hover {
+        
+        border-radius: 20px;
+        
+    }
+
+.filmcontent a {
+    text-decoration: none;
+    color: white;
+    background:none;
+    
+}
+.filmcontent a:hover{
+        cursor: pointer;
+    }
+
+.filmcontent a img {
+    margin-top:5px;
+    border-radius:5px;
+    width:200px;
+    height:300px;
+    resize:none;
+}
+
+.filmcontent:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+    transition: background-color .3s;
+}
+
+    label.filmbaslik{
+        color:white;
+        font-size:18px;
+        margin-top:10px;
+    }
+
+.filmcontent i {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    transition: color .3s;
+}
+.filmcontent i:hover{
+    cursor:pointer;
+    color:red;
+}
+
+
+footer {
+    width: 100%;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+    footer i {
+        font-size: 24px;
+        margin-top: 5px;
+        margin-left: 10px;
+        transition: color .3s;
+    }
+
+label.biseyler {
+    margin-left: 650px;
+    font-size: 16px;
+    cursor:auto;
+}
+
+footer i:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+
+.filmgoster {
+    color: White;
+    text-align: center;
+    text-decoration: none;
+    width:1000px;
+    height:520px;
+    margin-top: 5px;
+    justify-content: center;
+    float:left;
+}
+
+.filmgoster2 {
+    width:320px;
+    height:500px;
+    background-color: #1a1a1a;
+    transition: all .2s;
+}
+.filmgoster img {
+    width: 320px;
+    height: 500px;
+    border-radius: 12px;
+    background: linear-gradient(335deg, rgba(37,37,37,1) 0%, rgba(45,45,45,1) 50%, rgba(71,71,71,1) 100%);
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    transition: all .3s;
+}
+
+    .filmgoster img:hover {
+        box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+        transition: background-color .3s;
+        cursor: pointer;
+    }
+
+label.fgosterbaslik {
+    color: white;
+    font-size: 26px;
+    position: relative;
+    display: inline-block;
+    top: -450px;
+    margin-left:300px;
+    cursor: auto;
+    font-weight: Bold;
+}
+
+label.ozet {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    cursor: auto;
+    display: inline-block;
+    top: -430px;
+    padding: 0;
+}
+
+.ozet {
+    width: 600px;
+    height: auto;
+    position: relative;
+    margin-left:350px;
+    top: -430px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+label.tur {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    text-align:justify;
+    cursor: auto;
+    display: inline-block;
+    top: -440px;
+    padding: 0;
+    font-weight:bold;
+    margin-left:300px;
+}
+
+.filmbilgiler {
+    color: white;
+    font-size: 14px;
+    position: relative;
+    cursor: auto;
+    display: inline-block;
+}
+
+.fbilgileri {
+    color: White;
+    text-align: left;
+    position: relative;
+    line-height: 20px;
+    top:-400px;
+    margin-left:350px;
+}
+
+label.alanlar {
+    font-weight: Bold;
+    font-size: 20px;
+    text-align: left;
+    cursor: auto;
+}
+
+label.alanbilgileri {
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    line-height:12px;
+    cursor: auto;
+}
+
+.uyelerigor {
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    background-color: #171717;
+    line-height: 40px;
+    margin-left: 5px;
+    width: 1000px;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+    .uyelerigor a {
+        color:white;
+        font-size: 1.0em;
+        padding: 7px 12px;
+        text-transform: uppercase;
+        transition: 0.5s;
+        border-radius: 8px;
+        width:40px;
+    }
+    .uyelerigor a:hover{
+    background: #EEEEEE;
+    color: black;
+    border-radius: 8px;
+}
+
+label.welcome2 {
+    margin-left: 200px;
+    margin-right: auto;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: auto;
+}
+label.uyari {
+    color: white;
+    margin-left: 20px;
+    margin-right: auto;
+    font-size: 14px;
+    cursor: auto;
+}
+.beklenenfilmler {
+    color: white;
+    height: 350px;
+    width: 1000px;
+    
+    text-decoration: none;
+    background: linear-gradient(335deg, rgba(37,37,37,1) 0%, rgba(45,45,45,1) 50%, rgba(71,71,71,1) 100%);
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 5px;
+    overflow:hidden;
+}
+
+.beklenenfilmler2 {
+    background-color: #1a1a1a;
+    transition: all .2s;
+    height: 350px;
+    width: 1000px;
+}
+
+    .beklenenfilmler2:hover {
+        transform: scale(0.98);
+        border-radius: 8px;
+        z-index: 0;
+        position: relative;
+    }
+
+.beklenenfilmler:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+.beklenenfilmler a {
+    background: none;
+}
+
+.beklenenfilmler img {
+    border-radius: 8px;
+    height: 220px;
+    width: 170px;
+    margin-bottom: 5px;
+    position: relative;
+    margin-left: 40px;
+    top: 10px;
+}
+
+.beklenenfilmlertag {
+    border-radius: 8px;
+    height: 70px;
+    width: 170px;
+    margin-bottom: 5px;
+    position: relative;
+    margin-left: 40px;
+    top: 5px;
+    text-align: Center;
+    border: 1px white solid;
+}
+
+.beklenenfilmlerisim {
+    font-size: 16px;
+    color:white;
+    position: relative;
+    top: 10px;
+}
+
+label.beklenenfilmlerbaslik1 {
+    color: White;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: -180px;
+    top: 10px;
+    text-align: justify;
+    position: relative;
+}
+
+.gecenfilmler {
+    float: left;
+    display: inline-block;
+    height: 350px;
+}
+
+.oscarsahipleri {
+    color: white;
+    height: 490px;
+    width: 1000px;
+    text-decoration: none;
+    background: linear-gradient(335deg, rgba(37,37,37,1) 0%, rgba(45,45,45,1) 50%, rgba(71,71,71,1) 100%);
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    text-align: center;
+    border-radius: 8px;
+}
+    .oscarsahipleri a {
+        text-decoration: none;
+        color: white;
+        background: none;
+    }
+
+.oscarsahipleri2 {
+    background-color: #1a1a1a;
+    transition: all .2s;
+    height: 490px;
+    width: 1000px;
+    float: left;
+    display: inline-block;
+}
+    .oscarsahipleri2:hover {
+        transform: scale(0.98);
+        border-radius: 8px;
+    }
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+}
+
+
+.mySlides {
+    display: none;
+    text-decoration: none;
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    
+}
+
+
+.next {
+    right: 12px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left:12px;
+    border-radius: 3px 0 0 3px;
+}
+
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+    }
+
+
+.text {
+    color: white;
+    font-size: 15px;
+    padding: 8px 12px;
+    bottom: 0px;
+    top: 70px;
+    position: relative;
+    width: 200px;
+    margin-left: 400px;
+    border-radius: 5px 6px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #484848;
+}
+
+
+
+
+
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}

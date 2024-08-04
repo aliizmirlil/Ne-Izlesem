@@ -1,0 +1,58 @@
+﻿@model neizlesem_proje.Models.Uye
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="container">
+            <div class="container2">
+                <br />
+                <br />
+                <label class="welcomeupdate">BİLGİLERİ GÜNCELLE</label>
+                <br />
+                <hr style="width:50%; margin:auto; margin-top:10px;" />
+                <br />
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.uye_no)
+
+                <div class="form-group">
+                    <label class="name"><b>Ad soyad: </b></label>
+                    @Html.EditorFor(model => model.ad_soyad)
+                    @Html.ValidationMessageFor(model => model.ad_soyad, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="name"><b>E-mail: </b></label>
+                    @Html.TextBoxFor(model => model.uye_mail)
+                    @Html.ValidationMessageFor(model => model.uye_mail, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="name"><b>Kullanıcı adı: </b></label>
+                    @Html.EditorFor(model => model.kul_adi)
+                    @Html.ValidationMessageFor(model => model.kul_adi, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label class="name"><b>Şifre: </b></label>
+                    @Html.EditorFor(model => model.sifre)
+                    @Html.ValidationMessageFor(model => model.sifre, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Güncelle" class="bttn" />
+                </div>
+                <br />
+                <label class="uyari"><i>@ViewBag.durumu</i></label>
+            </div>
+        </div>
+    </div>
+}
+

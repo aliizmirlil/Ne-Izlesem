@@ -1,0 +1,116 @@
+﻿@using neizlesem_proje.Models
+<!DOCTYPE html>
+@{
+    string adsoyad = "Ziyaretçi";
+    if (Session["uyem"] != null)
+    {
+        adsoyad = ((Uye)Session["uyem"]).ad_soyad;
+    }
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ne İzlesem?</title>
+    <link rel="shortcut icon" href="~/film_afisleri/questmark.png" />
+    <link rel="stylesheet" href="~/Content/layoutum.css" />
+    <link rel="stylesheet" href="~/Content/kayitgiris.css" />
+    <link rel="stylesheet" href="~/Content/PagedList.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <label class="logo" for=""> <img src="~/film_afisleri/logodeneme6.png" /> </label>
+        <ul>
+            @if (Session["uyem"] == null)
+            {
+                <li><a class="active" href="@Url.Action("Index","Film")"><i class="fa-regular fa-solid fa-house"></i> Ana sayfa</a></li>
+                <li><a href="@Url.Action("film_oner","Film")"><i class="fa-regular fa-question"></i> Film öner</a></li>
+                <li class="kategori-li">
+                    <a href="#"><i class="fa-solid fa-bars"></i> Kategoriler </a>
+                    <div id="kategoriler-content">
+                        @{ Html.RenderAction("tur_doldur", "Home");}
+                        @* <ul>
+                                <li style="display:block;"> <a href="#"> Aksiyon </a> </li>
+                                <li style="display:block;"> <a href="#"> Macera </a> </li>
+                                <li style="display:block;"> <a href="#"> Korku </a> </li>
+                            </ul> *@
+                    </div>
+                </li>
+                <li><a href="@Url.Action("sinema","Home")"><i class="fa-solid fa-film"></i> Sinema</a></li>
+                <li><a href="@Url.Action("Create","Uyes")"><i class="fa-solid fa-right-to-bracket"></i> Üye ol </a></li>
+                <li><a href="@Url.Action("uye_giris","Home")"><i class="fa-regular fa-user"></i> Giriş yap</a></li>
+            }
+            else if (Session["admin"] == null)
+            {
+                <li><a class="active" href="@Url.Action("Index","Film")"><i class="fa-regular fa-solid fa-house"></i> Ana sayfa</a></li>
+                <li><a href="@Url.Action("film_oner","Film")"><i class="fa-regular fa-question"></i> Film öner</a></li>
+                <li class="kategori-li">
+                    <a href="#"><i class="fa-solid fa-bars"></i> Kategoriler </a>
+                    <div id="kategoriler-content">
+                        @{ Html.RenderAction("tur_doldur", "Home");}
+                        @* <ul>
+                                <li style="display:block;"> <a href="#"> Aksiyon </a> </li>
+                                <li style="display:block;"> <a href="#"> Macera </a> </li>
+                                <li style="display:block;"> <a href="#"> Korku </a> </li>
+                            </ul> *@
+                    </div>
+                </li>
+                <li><a href="@Url.Action("sinema","Home")"><i class="fa-solid fa-film"></i> Sinema</a></li>
+                <li><a href="@Url.Action("Edit","Uyes",new {id = ((Uye)Session["uyem"]).uye_no })"><i class="fa-solid fa-user-pen"></i> Üye bilgileri güncelle </a></li>
+                <li><a href="@Url.Action("Index","Favori")"><i class="fa-solid fa-heart"></i> Favoriler </a></li>
+                <li><a href="@Url.Action("guv_cik","Home")"><i class="fa-solid fa-arrow-right-from-bracket"></i> Çıkış yap</a></li>
+            }
+            else
+            {
+                <li><a class="active" href="@Url.Action("Index2","Film")"><i class="fa-regular fa-solid fa-house"></i>Tüm filmleri gör</a></li>
+                <li><a href="@Url.Action("Create","Yonetmen")"><i class="fa-solid fa-floppy-disk"></i> Yönetmen kaydet </a></li>
+                <li><a href="@Url.Action("Index","Yonetmen")"><i class="fa-solid fa-users"></i> Yönetmenleri gör </a></li>
+                <li><a href="@Url.Action("Create","Film")"><i class="fa-solid fa-floppy-disk"></i> Film kaydet </a></li>
+                <li><a href="@Url.Action("Create","Uyes")"><i class="fa-solid fa-users"></i> Üye kayıt</a></li>
+                <li><a href="@Url.Action("Index","Uyes")"><i class="fa-solid fa-users"></i> Üyeleri gör </a></li>
+                <li><a href="@Url.Action("guv_cik","Home")"><i class="fa-solid fa-arrow-right-from-bracket"></i> Çıkış yap</a></li>
+            }
+
+
+        </ul>
+
+    </nav>
+    <div class="content">
+        <label class="hosgeldin" style="color:white; text-align:center"> Hoş geldin @adsoyad </label>
+        <br />
+        @RenderBody()
+    </div>
+    <br />
+    <footer>
+        <hr style="width:1000px; margin: auto;" /> <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-instagram"></i> /neizlesem <label class="biseyler"> © 2023 Ne izlesem. </label>
+    </footer>
+    <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+    </script>
+</body>
+</html>

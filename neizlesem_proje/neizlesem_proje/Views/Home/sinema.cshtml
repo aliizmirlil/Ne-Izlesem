@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "sinema";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+<div class="beklenenfilmler">
+    <div class="beklenenfilmler2">
+        <label class="filmbaslik" style="color:white; margin-left:auto; margin-right:auto; display:inline-block; margin-top:10px; font-weight:500; font-size:24px;">VİZYONA GELECEKLER</label>
+        <marquee onmouseover=this.stop(); onmouseout=this.start();>
+            <table>
+                <tr>
+                    <td>
+                        <div class="gecenfilmler">
+                            <a href="~/film_afisleri/barbieafis.jpg" target="_blank">	<img src="~/film_afisleri/barbieafis.jpg"> </a>
+                            <div class="beklenenfilmlertag"> <label class="beklenenfilmlerisim"> Barbie <br> 21 Temmuz 2023 </label> </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="gecenfilmler">
+                            <a href="~/film_afisleri/transformersafis.jpg" target="_blank"> <img src="~/film_afisleri/transformersafis.jpg"> </a>
+                            <div class="beklenenfilmlertag"> <label class="beklenenfilmlerisim"> Transformers: <br> Canavarların Yükselişi <br> 9 Haziran 2023 <br> </label> </div>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div class="gecenfilmler">
+                            <a href="~/film_afisleri/oppenheimerafis.jpg" target="_blank">	<img src="~/film_afisleri/oppenheimerafis.jpg"> </a>
+                            <div class="beklenenfilmlertag"> <label class="beklenenfilmlerisim"> Oppenheimer <br> 21 Temmuz 2023 </label> </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="gecenfilmler">
+                            <a href="~/film_afisleri/meg2afis.jpg" target="_blank">	<img src="~/film_afisleri/meg2afis.jpg"> </a>
+                            <div class="beklenenfilmlertag"> <label class="beklenenfilmlerisim"> Meg 2: The Trench <br> 4 Ağustos 2023 </label> </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="gecenfilmler">
+                            <a href="~/film_afisleri/flashafis.jpg" target="_blank">	<img src="~/film_afisleri/flashafis.jpg"> </a>
+                            <div class="beklenenfilmlertag"> <label class="beklenenfilmlerisim"> Flash <br> 16 Haziran 2023 </label> </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="gecenfilmler">
+                            <a href="~/film_afisleri/elementalafis.jpg" target="_blank">	<img src="~/film_afisleri/elementalafis.jpg"> </a>
+                            <div class="beklenenfilmlertag"> <label class="beklenenfilmlerisim"> Elemental: <br> Doğanın Güçleri <br> 16 Haziran 2023 </label> </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="gecenfilmler">
+                            <a href="~/film_afisleri/dune2afis.jpg" target="_blank">	<img src="~/film_afisleri/dune2afis.jpg"> </a>
+                            <div class="beklenenfilmlertag"> <label class="beklenenfilmlerisim"> Dune Part Two <br> 3 Kasım 2023 </label> </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="gecenfilmler">
+                            <a href="~/film_afisleri/fnafafis.jpg" target="_blank">	<img src="~/film_afisleri/fnafafis.jpg"> </a>
+                            <div class="beklenenfilmlertag"> <label class="beklenenfilmlerisim"> Five Nights at Freedy's <br> 27 Ekim 2023 </label> </div>
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+        </marquee>
+    </div>
+</div>
+<br>
+<div class="slideshow-container">
+    <div class="oscarsahipleri">
+        <div class="oscarsahipleri2">
+            <div class="mySlides fade">
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:140px; font-size:18px; font-weight:bold;">En İyi Film</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 15})">
+                    <img src="~/film_afisleri/eeaao.jpg" width="200" height="300" style="margin-right:-90px; margin-top:50px;"> </a>
+                    <label class="oscarlibaslik" style="position:relative; top:30px; left:-130px;">Everything Everywhere All At Once</label>
+
+                    <label class="oscarlibaslik" style="position:relative; top:-320px; left:170px; font-size:18px; font-weight:bold;">En İyi Animasyon</label>
+                                <a href="@Url.Action("film_goster","Film",new {id = 60})">
+                    <img src="~/film_afisleri/pinokyoafis.jpg" width="200" height="300" style="margin-right:10px; margin-top:10px;"> </a> 
+                    <label class="oscarlibaslik" style="position:relative; top:30px; left:-140px;">Pinokyo</label>
+                    <div class="text">2023 Oscar Kazanan Filmler</div>
+</div>
+
+
+            <div class="mySlides fade">
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:240px; font-size:18px; font-weight:bold;">En İyi Film</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 61})">
+                    <img src="~/film_afisleri/codaafis.jpg" width="200" height="300" style="margin-left:100px; margin-top:50px;">
+                </a>
+                <label class="oscarlibaslik" style="position:relative; top:30px; left:-120px;">CODA</label>
+
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:210px; font-size:18px; font-weight:bold;">En İyi Animasyon</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 62})">
+                    <img src="~/film_afisleri/enkantoafis.jpg" width="200" height="300" style="margin-left:35px; margin-top:10px;"> </a>
+                    <label class="oscarlibaslik" style="position:relative; top:30px; left:-180px;">Enkanto: Sihirli Dünya</label>
+                    <div class="text">2022 Oscar Kazanan Filmler </div>
+            </div>
+
+            <div class="mySlides fade">
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:140px; font-size:18px; font-weight:bold;">En İyi Film</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 63})">
+                    <img src="~/film_afisleri/nomadlandafis.jpg" width="200" height="300" style="margin-right:10px; margin-top:50px;">
+                </a>
+                <label class="oscarlibaslik" style="position:relative; top:30px; left:-160px;">Nomadland</label>
+
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:170px; font-size:18px; font-weight:bold;">En İyi Animasyon</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 42})">
+                    <img src="~/film_afisleri/soul.jpg" width="200" height="300" style="margin-right:10px; margin-top:10px;"> </a>
+                    <label class="oscarlibaslik" style="position:relative; top:30px; left:-130px;">Soul</label>
+                    <div class="text">2021 Oscar Kazanan Filmler </div>
+            </div>
+
+            <div class="mySlides fade">
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:140px; font-size:18px; font-weight:bold;">En İyi Film</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 64})">
+                    <img src="~/film_afisleri/parazit.jpg" width="200" height="300" style="margin-right:10px; margin-top:50px;">
+                </a>
+                <label class="oscarlibaslik" style="position:relative; top:30px; left:-140px;">Parasite</label>
+
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:170px; font-size:18px; font-weight:bold;">En İyi Animasyon</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 65})">
+                    <img src="~/film_afisleri/toystory4.jpg" width="200" height="300" style="margin-right:10px; margin-top:10px;"> </a>
+                    <label class="oscarlibaslik" style="position:relative; top:30px; left:-150px;">Toy Story 4</label>
+                    <div class="text">2020 Oscar Kazanan Filmler </div>
+            </div>
+
+            <div class="mySlides fade">
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:140px; font-size:18px; font-weight:bold;">En İyi Film</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 66})">
+                    <img src="~/film_afisleri/yesilrehber.jpg" width="200" height="300" style="margin-right:30px; margin-top:50px;">
+                </a>
+                <label class="oscarlibaslik" style="position:relative; top:30px; left:-170px;">Green Book</label>
+
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:170px; font-size:18px; font-weight:bold;">En İyi Animasyon</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 9})">
+                    <img src="~/film_afisleri/spiderverse.jpg" width="200" height="300" style="margin-right:-150px; margin-top:10px;"> </a>
+                    <label class="oscarlibaslik" style="position:relative; top:30px; left:-70px;">Spider-Man: Into the Spider-Verse</label>
+                    <div class="text">2019 Oscar Kazanan Filmler </div>
+            </div>
+
+            <div class="mySlides fade">
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:140px; font-size:18px; font-weight:bold;">En İyi Film</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 67})">
+                    <img src="~/film_afisleri/suyunsesi.jpg" width="200" height="300" style="margin-right:-30px; margin-top:50px;">
+                </a>
+                <label class="oscarlibaslik" style="position:relative; top:30px; left:-140px;">The Shape Of Water</label>
+
+                <label class="oscarlibaslik" style="position:relative; top:-320px; left:170px; font-size:18px; font-weight:bold;">En İyi Animasyon</label>
+                <a href="@Url.Action("film_goster","Film",new {id = 68})">
+                    <img src="~/film_afisleri/coco.jpg" width="200" height="300" style="margin-right:10px; margin-top:10px;"> </a>
+                    <label class="oscarlibaslik" style="position:relative; top:30px; left:-130px;">Coco</label>
+                    <div class="text">2018 Oscar Kazanan Filmler </div>
+            </div>
+
+        </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+

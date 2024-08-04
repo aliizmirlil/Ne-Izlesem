@@ -1,0 +1,88 @@
+﻿@model neizlesem_proje.Models.Film
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layoutv2.cshtml";
+}
+
+<h2>Delete</h2>
+
+<div>
+    <h4>Film</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tur.tur_adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tur.tur_adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yonetmeni.yonetmen_adsoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yonetmeni.yonetmen_adsoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.film_adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.film_adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.film_ozeti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.film_ozeti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.film_afis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.film_afis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.film_cikis_tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.film_cikis_tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.puan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.puan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yildizlar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yildizlar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
