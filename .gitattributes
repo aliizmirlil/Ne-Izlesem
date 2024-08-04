@@ -2,4 +2,4 @@
 * text=auto
 
 * linguist-vendored
-*.csharp linguist-vendored=false
+*.csharp linguist-vendored=true
