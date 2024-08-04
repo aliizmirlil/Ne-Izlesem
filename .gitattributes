@@ -3,5 +3,5 @@
 
 *.css linguist-detectable=false
 *.html linguist-detectable=false
-*.htm linguist-detectable=false
+*.c linguist-detectable=true
 *.js linguist-detectable=false
