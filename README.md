@@ -1,0 +1,3 @@
+It is a simple movie recommendation website that suggests movies from its database based on your chosen features. You can add or remove movies from your favorites once you sign up and log in. The site also displays upcoming movies and recent award winners. Additionally, there is a straightforward dashboard for admins to add or remove movies and directors, as well as view member details, among other functions.
+
+This was a final project I completed during my BUTGEM course. It was my first project where I used HTML and CSS together with back-end technologies, wrote a database, and also utilized a structure like MVC.
